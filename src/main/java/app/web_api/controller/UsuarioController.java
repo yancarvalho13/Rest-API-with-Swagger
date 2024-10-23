@@ -14,11 +14,13 @@ public class UsuarioController {
     private UserRepository repository;
     @GetMapping()
     public List<Usuario> getUsers(){
+
         return repository.listAll();
     }
 
     @GetMapping("/{username}")
     public Usuario getSingle(@PathVariable ("username") String username){
+
         return repository.findByUsername(username);
     }
 
